@@ -1,3 +1,7 @@
+const API_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+    ? 'api/chat.php'
+    : '/.netlify/functions/chat';
+
 function createChatInstance({ messagesId, inputId, sendId, mode, hintsId }) {
     const messagesEl = document.getElementById(messagesId);
     const inputEl    = document.getElementById(inputId);
@@ -49,7 +53,7 @@ function createChatInstance({ messagesId, inputId, sendId, mode, hintsId }) {
         showTyping();
 
         try {
-            const res = await fetch('api/chat.php', {
+            const res = await fetch(API_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message: text, history: history.slice(-12), mode }),
