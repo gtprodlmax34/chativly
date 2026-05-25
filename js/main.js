@@ -43,17 +43,3 @@ document.querySelectorAll('.step, .niche-card, .benefit').forEach(el => {
 });
 
 
-// Demo hint clicks — fill input and send
-document.querySelectorAll('.demo-hints li').forEach(hint => {
-    hint.addEventListener('click', () => {
-        const raw = hint.textContent;
-        const match = raw.match(/"([^"]+)"/);
-        const text = match ? match[1] : raw.replace('💬 ', '').trim();
-        const input = document.getElementById('chatInput');
-        if (input && text) {
-            input.value = text;
-            input.focus();
-            document.getElementById('chatSend').click();
-        }
-    });
-});

@@ -1,16 +1,13 @@
 exports.handler = async (event) => {
     if (event.httpMethod === 'OPTIONS') {
-        return {
-            statusCode: 200,
-            headers: corsHeaders(),
-        };
+        return { statusCode: 200, headers: corsHeaders() };
     }
 
     if (event.httpMethod !== 'POST') {
         return respond(405, { error: 'Method not allowed' });
     }
 
-    const apiKey = process.env.GEMINI_API_KEY;
+    const apiKey = process.env.ANTHROPIC_API_KEY;
     if (!apiKey) {
         return respond(500, { error: 'Server configuration missing' });
     }
@@ -28,9 +25,25 @@ exports.handler = async (event) => {
     }
 
     const history = input.history || [];
-    const model = process.env.GEMINI_MODEL || 'gemini-2.0-flash';
+    const mode    = input.mode || 'demo';
 
-    const systemPrompt = `You are a demo AI assistant for Chativly — a service that provides AI chatbots for local businesses in Lithuania. Your job is to show potential business owners how a chatbot would work on their website.
+    const systemPrompt = mode === 'faq'
+        ? `You are a helpful assistant for Chativly — an AI chatbot service for local businesses in Lithuania.
+
+Answer questions about Chativly honestly:
+- Free trial: 4 days, full setup included
+- Setup time: ready within 24 hours, no technical knowledge needed
+- What it does: handles bookings and reservations, answers customer FAQs, works 24/7
+- Who it's for: any local business that works with customers. NEVER name or list any specific business types or examples when answering this
+- Pricing: contact via the booking form on the page to get a personalised quote
+- Getting started: book a free call by pressing the button on the page. In Lithuanian always say "paspaudę mygtuką" — never use "klikdami" or "klikę"
+
+IMPORTANT RULES:
+- Never use markdown. No asterisks, no bold, no bullet points with symbols, no headers. Write in plain conversational sentences only.
+- Keep answers short — 2 to 4 sentences max.
+- Sound friendly and helpful, not like a robot.
+- Always respond in the same language the user writes in — Lithuanian or English.`
+        : `You are a demo AI assistant for Chativly — a service that provides AI chatbots for local businesses in Lithuania. Your job is to show potential business owners how a chatbot would work on their website.
 
 You can act as a chatbot for any local business: barbershops, auto repair shops, beauty salons, dental clinics, gyms, law firms, driving schools, and so on.
 
@@ -47,48 +60,52 @@ IMPORTANT RULES:
 - Sound like a friendly human assistant, not a robot.
 - Always respond in the same language the user writes in — Lithuanian or English.`;
 
-    const contents = [];
+    const messages = [];
 
     for (const msg of history.slice(-12)) {
         if (msg.role && msg.content) {
-            contents.push({
-                role: msg.role === 'user' ? 'user' : 'model',
-                parts: [{ text: msg.content }],
+            messages.push({
+                role: msg.role === 'user' ? 'user' : 'assistant',
+                content: msg.content,
             });
         }
     }
 
-    contents.push({ role: 'user', parts: [{ text: message }] });
+    messages.push({ role: 'user', content: message });
 
     const payload = {
-        system_instruction: { parts: [{ text: systemPrompt }] },
-        contents,
-        generationConfig: { maxOutputTokens: 400, temperature: 0.7 },
+        model: 'claude-haiku-4-5-20251001',
+        max_tokens: 400,
+        system: [{ type: 'text', text: systemPrompt, cache_control: { type: 'ephemeral' } }],
+        messages,
     };
 
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
-
-    let geminiRes;
+    let claudeRes;
     try {
-        geminiRes = await fetch(url, {
+        claudeRes = await fetch('https://api.anthropic.com/v1/messages', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+                'x-api-key': apiKey,
+                'anthropic-version': '2023-06-01',
+                'anthropic-beta': 'prompt-caching-2024-07-31',
+            },
             body: JSON.stringify(payload),
         });
     } catch (e) {
         return respond(500, { error: 'Connection failed', detail: e.message });
     }
 
-    if (!geminiRes.ok) {
-        const detail = await geminiRes.text();
-        return respond(500, { error: 'Gemini API error', code: geminiRes.status, detail });
+    if (!claudeRes.ok) {
+        const detail = await claudeRes.text();
+        return respond(500, { error: 'Claude API error', code: claudeRes.status, detail });
     }
 
-    const result = await geminiRes.json();
-    const reply = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+    const result = await claudeRes.json();
+    const reply = result?.content?.[0]?.text;
 
     if (!reply) {
-        return respond(500, { error: 'Empty response from Gemini' });
+        return respond(500, { error: 'Empty response from Claude' });
     }
 
     return respond(200, { reply });

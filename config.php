@@ -9,8 +9,7 @@ if (file_exists($env_file)) {
     }
 }
 
-define('GEMINI_API_KEY', $_ENV['GEMINI_API_KEY'] ?? '');
-define('GEMINI_MODEL',   $_ENV['GEMINI_MODEL']   ?? 'gemini-2.0-flash');
+define('ANTHROPIC_API_KEY', $_ENV['ANTHROPIC_API_KEY'] ?? '');
 
 define('DB_HOST', $_ENV['DB_HOST'] ?? 'localhost');
 define('DB_NAME', $_ENV['DB_NAME'] ?? '');

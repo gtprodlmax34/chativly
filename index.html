@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chativly — DI Chatbotai Vietiniam Verslui</title>
     <meta name="description" content="Chativly suteikia jūsų verslui DI asistentą, kuris priima rezervacijas ir atsako į klientų klausimus visą parą. Pradėkite nemokamą 7 dienų bandomąją versiją.">
+    <link rel="icon" type="image/png" href="logofavicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=4">
+    <link rel="stylesheet" href="css/style.css?v=8">
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
@@ -78,55 +79,75 @@
 
 
     <!-- Live Demo -->
-    <section class="section" id="demo">
+    <section class="section" id="demo" style="position:relative; padding-bottom: 120px;">
         <div class="container">
             <div class="section__header">
                 <span class="section__tag">Išbandykite patys</span>
                 <h2 class="section__title">Pamatykite kaip tai veikia</h2>
-                <p class="section__subtitle">Tai yra tiesioginis demonstravimas. Paklauskite, ką chatbotas gali padaryti, arba pasakykite, kokio tipo verslas jūs turite.</p>
+                <p class="section__subtitle">Klauskite apie kainodarą, sąranką ar galimybes.</p>
             </div>
-            <div class="demo-wrapper">
-                <div class="demo-info">
-                    <div class="demo-business">
-                        <div class="demo-business__avatar">🤖</div>
-                        <div>
-                            <h3 class="demo-business__name">Chativly Demo</h3>
-                        </div>
+            <div class="demo-split">
+                <!-- Left: FAQ Bot -->
+                <div class="demo-col">
+                    <div class="demo-col__header">
+                        <span class="demo-col__tag">Apie Chativly</span>
+                        <p class="demo-col__desc">Klauskite apie kainodarą, sąranką ar galimybes</p>
                     </div>
-                    <p class="demo-hints__label">Pabandykite paklauti:</p>
-                    <ul class="demo-hints">
-                        <li>💬 "Ką tu gali padaryti?"</li>
-                        <li>💬 "Kaip veikia rezervacija?"</li>
-                        <li>💬 "Ar tinka kirpyklai?"</li>
-                        <li>💬 "Ar tinka autoservisui?"</li>
+                    <ul class="demo-hints" id="faqHints">
+                        <li>💬 "Kiek tai kainuoja?"</li>
+                        <li>💬 "Kaip greitai galiu pradėti?"</li>
+                        <li>💬 "Kokiems verslams tinka?"</li>
                     </ul>
-                </div>
-                <div class="chatbox" id="chatbox">
-                    <div class="chatbox__header">
-                        <div class="chatbox__status">
-                            <span class="chatbox__dot"></span>
-                            <span>Chativly Asistentas · Aktyvus</span>
+                    <div class="chatbox">
+                        <div class="chatbox__header">
+                            <div class="chatbox__status">
+                                <span class="chatbox__dot"></span>
+                                <span>Chativly · Klausimai</span>
+                            </div>
+                            <span class="chatbox__powered">powered by Chativly</span>
                         </div>
-                        <span class="chatbox__powered">powered by Chativly</span>
-                    </div>
-                    <div class="chatbox__messages" id="chatMessages">
-                        <div class="message message--bot">
-                            <div class="message__bubble">
-                                Sveiki! 👋 Aš esu <strong>Chativly</strong> demonstracinis asistentas. Galiu parodyti, kaip DI chatbotas veiktų jūsų verslui — rezervacijos, klausimai, kainos, darbo valandos ir daugiau. Paklauskite ko nors!
+                        <div class="chatbox__messages" id="chatMessagesFaq">
+                            <div class="message message--bot">
+                                <div class="message__bubble">Sveiki! Galiu atsakyti į klausimus apie Chativly — kainos, sąranka, galimybės. Ko norėtumėte sužinoti?</div>
                             </div>
                         </div>
-                    </div>
-                    <div class="chatbox__input">
-                        <input type="text" id="chatInput" placeholder="Rašykite žinutę..." autocomplete="off" />
-                        <button id="chatSend" class="chat-send-btn" aria-label="Siųsti">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="22" y1="2" x2="11" y2="13"></line>
-                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                            </svg>
-                        </button>
+                        <div class="chatbox__input">
+                            <input type="text" id="chatInputFaq" placeholder="Klauskite apie Chativly..." autocomplete="off" />
+                            <button id="chatSendFaq" class="chat-send-btn" aria-label="Siųsti">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Chat Bubble Preview -->
+        <div class="bubble-widget" id="bubbleWidget">
+            <div class="bubble-popup" id="bubblePopup">
+                <div class="chatbox__header">
+                    <div class="chatbox__status">
+                        <span class="chatbox__dot"></span>
+                        <span>Chativly Asistentas · Aktyvus</span>
+                    </div>
+                    <button class="bubble-close" id="bubbleClose" aria-label="Uždaryti">✕</button>
+                </div>
+                <div class="chatbox__messages" id="chatMessagesBubble">
+                    <div class="message message--bot">
+                        <div class="message__bubble">Sveiki! 👋 Kuo galiu padėti?</div>
+                    </div>
+                </div>
+                <div class="chatbox__input">
+                    <input type="text" id="chatInputBubble" placeholder="Rašykite žinutę..." autocomplete="off" />
+                    <button id="chatSendBubble" class="chat-send-btn" aria-label="Siųsti">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </button>
+                </div>
+            </div>
+            <button class="bubble-btn" id="bubbleBtn" aria-label="Atidaryti chatą">
+                <svg class="bubble-icon bubble-icon--chat" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                <svg class="bubble-icon bubble-icon--close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
         </div>
     </section>
 
@@ -171,7 +192,7 @@
         </div>
     </footer>
 
-    <script src="js/main.js?v=3"></script>
-    <script src="js/chatbot.js?v=3"></script>
+    <script src="js/main.js?v=6"></script>
+    <script src="js/chatbot.js?v=6"></script>
 </body>
 </html>

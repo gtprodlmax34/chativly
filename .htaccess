@@ -1,3 +1,6 @@
+RewriteEngine On
+RewriteRule ^api/chat$ api/chat.php [L]
+
 <Files "config.php">
     Order allow,deny
     Deny from all
