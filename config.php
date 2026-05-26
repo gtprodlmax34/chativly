@@ -1,4 +1,5 @@
 <?php
+// config
 // .env is for local development only — production uses server environment variables
 $env_file = __DIR__ . '/.env';
 if (file_exists($env_file)) {

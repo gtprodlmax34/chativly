@@ -1,3 +1,4 @@
+// chatbot
 const API_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
     ? 'api/chat.php'
     : '/.netlify/functions/chat';

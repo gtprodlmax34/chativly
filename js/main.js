@@ -1,3 +1,4 @@
+// main
 // Sticky nav
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
