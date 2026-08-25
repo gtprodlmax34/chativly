@@ -3,6 +3,9 @@ const API_URL = (window.location.hostname === 'localhost' || window.location.hos
     ? 'api/chat.php'
     : '/.netlify/functions/chat';
 
+const CALENDLY_URL = 'https://calendly.com/zygimantaspode';
+const BOOK_BTN_HTML = `<button class="chat-book-btn" onclick="if(typeof Calendly!=='undefined'){Calendly.initPopupWidget({url:'${CALENDLY_URL}'});}else{window.open('${CALENDLY_URL}','_blank');}return false;">📅 Pasirinkti skambučio laiką →</button>`;
+
 function createChatInstance({ messagesId, inputId, sendId, mode, hintsId }) {
     const messagesEl = document.getElementById(messagesId);
     const inputEl    = document.getElementById(inputId);
@@ -21,7 +24,7 @@ function createChatInstance({ messagesId, inputId, sendId, mode, hintsId }) {
         if (role === 'user') {
             bubble.textContent = content;
         } else {
-            bubble.innerHTML = content;
+            bubble.innerHTML = content.replace(/\n/g, '<br>').replace('[CALENDLY_BUTTON]', BOOK_BTN_HTML);
         }
         div.appendChild(bubble);
         messagesEl.appendChild(div);

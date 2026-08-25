@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chativly — DI Chatbotai Vietiniam Verslui</title>
-    <meta name="description" content="Chativly suteikia jūsų verslui DI asistentą, kuris priima rezervacijas ir atsako į klientų klausimus visą parą. Pradėkite nemokamą 7 dienų bandomąją versiją.">
+    <title>Chativly — Svetainės Vietiniam Verslui</title>
+    <meta name="description" content="Chativly kuria greitas, modernias svetaines vietiniam verslui Lietuvoje. Norint — prie svetainės galime pridėti ir DI chatbotą, kuris atsako klientams 24/7.">
     <link rel="icon" type="image/png" href="logofavicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=9">
+    <link rel="stylesheet" href="css/style.css?v=12">
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
@@ -18,29 +18,51 @@
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="container nav__inner">
-            <a href="#" class="nav__logo">Chativly</a>
+            <a href="index.html" class="nav__logo">
+                <span class="nav__logo-badge">C</span>
+                <span class="nav__logo-text">Chativly</span>
+            </a>
             <button class="nav__toggle" id="navToggle" aria-label="Atidaryti meniu">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav__links" id="navLinks">
                 <li><a href="#how-it-works">Kaip tai veikia</a></li>
-                <li><a href="#demo">Demo</a></li>
-                <li><a href="#contact" class="btn btn--primary btn--sm">Rezervuoti skambutį</a></li>
+                <li><a href="#services">Paslaugos</a></li>
+                <li><a href="chatbot.html">DI Chatbotas</a></li>
+                <li class="nav__cta"><a href="#contact" class="btn btn--primary btn--sm">Rezervuoti skambutį</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero -->
-    <section class="hero" id="hero">
+    <section class="hero hero--split" id="hero">
         <div class="hero__bg"></div>
         <div class="container hero__inner">
-            <h1 class="hero__title">Paverskite lankytojus<br><span class="gradient-text">užsakovais — 24/7</span></h1>
-            <p class="hero__subtitle">Chativly suteikia jūsų verslui DI asistentą, kuris priima rezervacijas ir atsako į klausimus akimirksniu</p>
-            <div class="hero__ctas">
-                <a href="#demo" class="btn btn--primary btn--lg">Pamatyti Demo</a>
-                <a href="#contact" class="btn btn--outline btn--lg">Rezervuoti skambutį</a>
+            <div class="hero__content">
+                <div class="hero__badge">
+                    <span class="hero__badge-dot"></span>
+                    Svetainės vietiniam verslui
+                </div>
+                <h1 class="hero__title">Svetainė, kuri<br><span class="gradient-text">atneša klientus</span></h1>
+                <p class="hero__subtitle">Chativly kuria greitas, modernias svetaines vietiniam verslui Lietuvoje — nuo dizaino iki paleidimo. Jūs nesirūpinate technologijomis, mes viską padarome.</p>
+                <div class="hero__ctas">
+                    <a href="#contact" class="btn btn--primary btn--lg">Rezervuoti skambutį</a>
+                    <a href="#how-it-works" class="btn btn--outline btn--lg">Kaip tai veikia</a>
+                </div>
+                <p class="hero__note">Svetainė gyva per kelias savaites.</p>
             </div>
-            <p class="hero__note">4 dienų nemokamas išbandymas.</p>
+            <div class="hero__visual">
+                <div class="hero__mock-glow"></div>
+                <div class="hero__mock">
+                    <div class="hero__mock-bar"><span></span><span></span><span></span></div>
+                    <div class="hero__mock-body">
+                        <div class="hero__chat-bubble hero__chat-bubble--user">Ar priimate rezervacijas savaitgaliais?</div>
+                        <div class="hero__chat-bubble hero__chat-bubble--bot">Taip! Priimame rezervacijas 24/7 — net kai jūs miegate 😊</div>
+                        <div class="hero__chat-bubble hero__chat-bubble--user">Super, noriu rezervuoti stalą penktadienį</div>
+                    </div>
+                </div>
+                <div class="hero__floating-chip"><span class="hero__floating-dot"></span>Aktyvus dabar</div>
+            </div>
         </div>
     </section>
 
@@ -50,118 +72,97 @@
             <div class="section__header">
                 <span class="section__tag">Paprastas procesas</span>
                 <h2 class="section__title">Kaip tai veikia</h2>
-                <p class="section__subtitle">Pradėti galite per vieną dieną.</p>
+                <p class="section__subtitle">Nuo pokalbio iki gyvos svetainės — be galvos skausmo.</p>
             </div>
             <div class="steps">
                 <div class="step">
                     <div class="step__number">01</div>
                     <div class="step__icon">📋</div>
-                    <h3 class="step__title">Mes viską nustatome</h3>
-                    <p class="step__desc">Papasakosite apie savo versla. Mes sukonfigūruosime DI asistentą pritaikytą būtent jūsų verslui.</p>
+                    <h3 class="step__title">Pasitariame</h3>
+                    <p class="step__desc">Papasakosite apie savo verslą ir tikslus. Kartu nusprendžiame, kokia svetainė jums geriausiai tiks.</p>
                 </div>
                 <div class="step__arrow">→</div>
                 <div class="step">
                     <div class="step__number">02</div>
-                    <div class="step__icon">💬</div>
-                    <h3 class="step__title">Klientai pradeda rašyti</h3>
-                    <p class="step__desc">Jūsų svetainės lankytojai klausinėja ir prašo rezervacijų. DI atsako akimirksniu, visą parą.</p>
+                    <div class="step__icon">🎨</div>
+                    <h3 class="step__title">Mes sukuriame</h3>
+                    <p class="step__desc">Suprojektuojame ir sukuriame svetainę — dizainą, tekstus ir techninę pusę. Jūs peržiūrite ir tvirtinate.</p>
                 </div>
                 <div class="step__arrow">→</div>
                 <div class="step">
                     <div class="step__number">03</div>
-                    <div class="step__icon">📅</div>
-                    <h3 class="step__title">Jūs gaunate rezervacijas</h3>
-                    <p class="step__desc">Užsakymai fiksuojami automatiškai. Mažiau laiko prie telefono — daugiau laiko tam, ką darote geriausiai.</p>
+                    <div class="step__icon">🚀</div>
+                    <h3 class="step__title">Paleidžiame</h3>
+                    <p class="step__desc">Svetainė iškeliama į internetą ir pradeda pritraukti klientus. Mes liekame šalia, jei ko nors prireiks.</p>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!-- Live Demo -->
-    <section class="section" id="demo" style="position:relative; padding-bottom: 120px;">
+    <!-- Services -->
+    <section class="section" id="services">
         <div class="container">
             <div class="section__header">
-                <span class="section__tag">Išbandykite patys</span>
-                <h2 class="section__title">Pamatykite kaip tai veikia</h2>
+                <span class="section__tag">Kas įtraukta</span>
+                <h2 class="section__title">Viskas, ko reikia svetainei</h2>
+                <p class="section__subtitle">Vienas paketas — jokių papildomų įrankių ar prisijungimų, kuriuos reikėtų prižiūrėti patiems.</p>
             </div>
-            <div class="demo-split">
-                <!-- Left: FAQ Bot -->
-                <div class="demo-col">
-                    <div class="demo-col__header">
-                        <span class="demo-col__tag">Apie Chativly</span>
-                        <p class="demo-col__desc">Klauskite apie kainodarą, sąranką ar galimybes</p>
-                    </div>
-                    <ul class="demo-hints" id="faqHints">
-                        <li>💬 "Ka tu darai?"</li>
-                        <li>💬 "Kaip greitai galiu pradėti?"</li>
-                        <li>💬 "Kokiems verslams tinka?"</li>
-                    </ul>
-                    <div class="chatbox">
-                        <div class="chatbox__header">
-                            <div class="chatbox__status">
-                                <span class="chatbox__dot"></span>
-                                <span>Chativly · Asistentas</span>
-                            </div>
-                            <span class="chatbox__powered">powered by Chativly</span>
-                        </div>
-                        <div class="chatbox__messages" id="chatMessagesFaq">
-                            <div class="message message--bot">
-                                <div class="message__bubble">Sveiki! Galiu atsakyti į klausimus apie Chativly — kainos, sąranka, galimybės. Ko norėtumėte sužinoti?</div>
-                            </div>
-                        </div>
-                        <div class="chatbox__input">
-                            <input type="text" id="chatInputFaq" placeholder="Klauskite apie Chativly..." autocomplete="off" />
-                            <button id="chatSendFaq" class="chat-send-btn" aria-label="Siųsti">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                            </button>
-                        </div>
-                    </div>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature__icon">📱</div>
+                    <h3 class="feature__title">Pritaikyta visiems ekranams</h3>
+                    <p class="feature__desc">Svetainė vienodai gerai atrodo telefone, planšetėje ir kompiuteryje.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature__icon">🌐</div>
+                    <h3 class="feature__title">Talpinimas ir priežiūra</h3>
+                    <p class="feature__desc">Susitvarkome hostingą ir domeną. Jums nereikia jokių techninių žinių.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature__icon">📝</div>
+                    <h3 class="feature__title">Kontaktų ir rezervacijų formos</h3>
+                    <p class="feature__desc">Klientai gali susisiekti arba rezervuoti tiesiai iš svetainės.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature__icon">⚡</div>
+                    <h3 class="feature__title">Greitas įkėlimas</h3>
+                    <p class="feature__desc">Optimizuota greičiui — lankytojai nelaukia ir nepalieka svetainės.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature__icon">💬</div>
+                    <h3 class="feature__title">DI chatbotas (jei norite)</h3>
+                    <p class="feature__desc">Galima papildyti svetainę DI asistentu, kuris atsakinėtų klientams 24/7.</p>
                 </div>
             </div>
-        </div>
-
-        <!-- Chat Bubble Preview -->
-        <div class="bubble-widget" id="bubbleWidget">
-            <div class="bubble-popup" id="bubblePopup">
-                <div class="chatbox__header">
-                    <div class="chatbox__status">
-                        <span class="chatbox__dot"></span>
-                        <span>Chativly Asistentas · Aktyvus</span>
-                    </div>
-                    <button class="bubble-close" id="bubbleClose" aria-label="Uždaryti">✕</button>
-                </div>
-                <div class="chatbox__messages" id="chatMessagesBubble">
-                    <div class="message message--bot">
-                        <div class="message__bubble">Sveiki! 👋 Kuo galiu padėti?</div>
-                    </div>
-                </div>
-                <div class="chatbox__input">
-                    <input type="text" id="chatInputBubble" placeholder="Rašykite žinutę..." autocomplete="off" />
-                    <button id="chatSendBubble" class="chat-send-btn" aria-label="Siųsti">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                    </button>
-                </div>
-            </div>
-            <button class="bubble-btn" id="bubbleBtn" aria-label="Atidaryti chatą">
-                <svg class="bubble-icon bubble-icon--chat" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                <svg class="bubble-icon bubble-icon--close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-            </button>
         </div>
     </section>
 
+    <!-- Chatbot Add-on Teaser -->
+    <section class="section" id="addon">
+        <div class="container">
+            <div class="addon-teaser">
+                <div class="addon-teaser__icon">💬</div>
+                <div class="addon-teaser__body">
+                    <span class="section__tag">Papildoma paslauga</span>
+                    <h2 class="addon-teaser__title">Norite, kad svetainė pati atsakinėtų klientams?</h2>
+                    <p class="addon-teaser__desc">Prie bet kurios mūsų sukurtos svetainės galime pridėti Chativly DI chatbotą — jis priima rezervacijas ir atsako į klausimus visą parą, net kai jūs nedirbate.</p>
+                    <a href="chatbot.html" class="btn btn--primary btn--lg">Sužinoti apie DI chatbotą →</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Trial -->
+    <!-- Trial / CTA -->
     <section class="section trial" id="trial">
         <div class="container">
             <div class="trial__inner">
-                <h2 class="trial__title">Išbandykite Chativly<br>nemokamai 4 dienas</h2>
-                <p class="trial__subtitle">Gaukite visiškai veikiantį DI chatbotą savo svetainėje — be rizikos. Jei jis nepritrauks daugiau rezervacijų — nieko neprarasite.</p>
+                <h2 class="trial__title">Aptarkime jūsų<br>naują svetainę</h2>
+                <p class="trial__subtitle">Nemokamas pokalbis apie jūsų verslą ir tai, kokia svetainė jam tiktų geriausiai. Jokių įsipareigojimų.</p>
                 <div class="trial__features">
-                    <span>✓ Pritaikytas jūsų verslui</span>
-                    <span>✓ Gyvas per 24 val.</span>
+                    <span>✓ Pritaikyta jūsų verslui</span>
+                    <span>✓ Gyva per kelias savaites</span>
                 </div>
-                <a href="#contact" class="btn btn--white btn--lg">Gauti nemokamą bandomąją versiją</a>
+                <a href="#contact" class="btn btn--white btn--lg">Rezervuoti nemokamą skambutį</a>
             </div>
         </div>
     </section>
@@ -172,7 +173,7 @@
             <div class="section__header">
                 <span class="section__tag">Bendraukite su mumis :)</span>
                 <h2 class="section__title">Rezervuokite nemokamą skambutį</h2>
-                <p class="section__subtitle">Pasirinkite jums patogų laiką — pasikalbėsime apie jūsų verslą ir paruošime chatbotą.</p>
+                <p class="section__subtitle">Pasirinkite jums patogų laiką — pasikalbėsime apie jūsų verslą ir naują svetainę.</p>
             </div>
             <div class="calendly-cta" style="display:flex;justify-content:center;">
                 <button class="btn btn--primary btn--lg" onclick="if(typeof Calendly!=='undefined'){Calendly.initPopupWidget({url:'https://calendly.com/zygimantaspode'});}else{window.open('https://calendly.com/zygimantaspode','_blank');}return false;">
@@ -185,12 +186,11 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer__inner">
-            <a href="#" class="footer__logo">Chativly</a>
-            <p class="footer__copy">© 2026 Chativly. DI chatbotai vietiniam verslui Lietuvoje.</p>
+            <a href="index.html" class="footer__logo">Chativly</a>
+            <p class="footer__copy">© 2026 Chativly. Svetainės ir DI chatbotai vietiniam verslui Lietuvoje.</p>
         </div>
     </footer>
 
-    <script src="js/main.js?v=6"></script>
-    <script src="js/chatbot.js?v=6"></script>
+    <script src="js/main.js?v=8"></script>
 </body>
 </html>

@@ -38,7 +38,7 @@ const revealObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll('.step, .niche-card, .benefit').forEach(el => {
+document.querySelectorAll('.step, .feature, .addon-teaser').forEach(el => {
     el.classList.add('reveal');
     revealObserver.observe(el);
 });
