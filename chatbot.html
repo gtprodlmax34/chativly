@@ -19,7 +19,7 @@
     <nav class="nav" id="nav">
         <div class="container nav__inner">
             <a href="index.html" class="nav__logo">
-                <span class="nav__logo-badge">C</span>
+                <img src="logofavicon.png" alt="Chativly" class="nav__logo-badge">
                 <span class="nav__logo-text">Chativly</span>
             </a>
             <button class="nav__toggle" id="navToggle" aria-label="Atidaryti meniu">
@@ -27,77 +27,28 @@
             </button>
             <ul class="nav__links" id="navLinks">
                 <li><a href="index.html">← Svetainių kūrimas</a></li>
-                <li><a href="#how-it-works">Kaip tai veikia</a></li>
-                <li><a href="#demo">Demo</a></li>
-                <li class="nav__cta"><a href="#contact" class="btn btn--primary btn--sm">Rezervuoti skambutį</a></li>
+                <li class="nav__cta"><a href="#" class="btn btn--primary btn--sm" onclick="if(typeof Calendly!=='undefined'){Calendly.initPopupWidget({url:'https://calendly.com/zygimantaspode'});}else{window.open('https://calendly.com/zygimantaspode','_blank');}return false;">Rezervuoti skambutį</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="hero" id="hero">
+    <!-- Hero / Ad -->
+    <section class="hero hero--split" id="hero" style="position:relative;">
         <div class="hero__bg"></div>
         <div class="container hero__inner">
-            <div class="hero__badge">
-                <span class="hero__badge-dot"></span>
-                Papildoma paslauga jūsų svetainei
-            </div>
-            <h1 class="hero__title">Jūsų svetainė, kuri<br><span class="gradient-text">atsako klientams — 24/7</span></h1>
-            <p class="hero__subtitle">Chativly DI chatbotas — papildinys, kurį galime pridėti prie jūsų svetainės. Jis priima rezervacijas ir atsako į klausimus akimirksniu, bet kuriuo metu.</p>
-            <div class="hero__ctas">
-                <a href="#demo" class="btn btn--primary btn--lg">Pamatyti Demo</a>
-                <a href="#contact" class="btn btn--outline btn--lg">Rezervuoti skambutį</a>
-            </div>
-            <p class="hero__note">4 dienų nemokamas išbandymas.</p>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="section" id="how-it-works">
-        <div class="container">
-            <div class="section__header">
-                <span class="section__tag">Paprastas procesas</span>
-                <h2 class="section__title">Kaip tai veikia</h2>
-                <p class="section__subtitle">Pridedame prie bet kurios svetainės — savo ar jau turimos.</p>
-            </div>
-            <div class="steps">
-                <div class="step">
-                    <div class="step__number">01</div>
-                    <div class="step__icon">📋</div>
-                    <h3 class="step__title">Mes viską nustatome</h3>
-                    <p class="step__desc">Papasakosite apie savo verslą. Mes sukonfigūruosime DI asistentą ir įdiegsime jį jūsų svetainėje.</p>
+            <div class="hero__content">
+                <div class="hero__badge">
+                    <span class="hero__badge-dot"></span>
+                    Papildoma paslauga jūsų svetainei
                 </div>
-                <div class="step__arrow">→</div>
-                <div class="step">
-                    <div class="step__number">02</div>
-                    <div class="step__icon">💬</div>
-                    <h3 class="step__title">Klientai pradeda rašyti</h3>
-                    <p class="step__desc">Jūsų svetainės lankytojai klausinėja ir prašo rezervacijų. DI atsako akimirksniu, visą parą.</p>
+                <h1 class="hero__title">Jūsų svetainė, kuri<br><span class="gradient-text">atsako klientams — 24/7</span></h1>
+                <p class="hero__subtitle">Chativly DI chatbotas — papildinys, kurį galime pridėti prie jūsų svetainės. Jis priima rezervacijas ir atsako į klausimus akimirksniu, bet kuriuo metu.</p>
+                <div class="hero__ctas">
+                    <button class="btn btn--primary btn--lg" onclick="if(typeof Calendly!=='undefined'){Calendly.initPopupWidget({url:'https://calendly.com/zygimantaspode'});}else{window.open('https://calendly.com/zygimantaspode','_blank');}return false;">Rezervuoti nemokamą skambutį</button>
                 </div>
-                <div class="step__arrow">→</div>
-                <div class="step">
-                    <div class="step__number">03</div>
-                    <div class="step__icon">📅</div>
-                    <h3 class="step__title">Jūs gaunate rezervacijas</h3>
-                    <p class="step__desc">Užsakymai fiksuojami automatiškai. Mažiau laiko prie telefono — daugiau laiko tam, ką darote geriausiai.</p>
-                </div>
+                <p class="hero__note">4 dienų nemokamas išbandymas.</p>
             </div>
-        </div>
-    </section>
-
-
-    <!-- Live Demo -->
-    <section class="section" id="demo" style="position:relative; padding-bottom: 120px;">
-        <div class="container">
-            <div class="section__header">
-                <span class="section__tag">Išbandykite patys</span>
-                <h2 class="section__title">Pamatykite kaip tai veikia</h2>
-            </div>
-            <div class="demo-split">
-                <div class="demo-col__header">
-                    <span class="demo-col__tag">Išbandykite dabar</span>
-                    <p class="demo-col__desc">Paklauskite apie kainodarą arba užsiregistruokite pokalbiui</p>
-                </div>
+            <div class="hero__visual">
                 <ul class="demo-hints" id="faqHints">
                     <li>💬 "Kiek tai kainuoja?"</li>
                     <li>💬 "Noriu rezervuoti"</li>
@@ -159,38 +110,6 @@
                 <svg class="bubble-icon bubble-icon--chat" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                 <svg class="bubble-icon bubble-icon--close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
-        </div>
-    </section>
-
-
-    <!-- Trial -->
-    <section class="section trial" id="trial">
-        <div class="container">
-            <div class="trial__inner">
-                <h2 class="trial__title">Išbandykite Chativly<br>nemokamai 4 dienas</h2>
-                <p class="trial__subtitle">Pridėkite visiškai veikiantį DI chatbotą prie savo svetainės — be rizikos. Jei jis nepritrauks daugiau rezervacijų — nieko neprarasite.</p>
-                <div class="trial__features">
-                    <span>✓ Pritaikytas jūsų verslui</span>
-                    <span>✓ Gyvas per 24 val.</span>
-                </div>
-                <a href="#contact" class="btn btn--white btn--lg">Gauti nemokamą bandomąją versiją</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="section" id="contact">
-        <div class="container">
-            <div class="section__header">
-                <span class="section__tag">Bendraukite su mumis :)</span>
-                <h2 class="section__title">Rezervuokite nemokamą skambutį</h2>
-                <p class="section__subtitle">Pasirinkite jums patogų laiką — pasikalbėsime apie jūsų verslą ir paruošime chatbotą.</p>
-            </div>
-            <div class="calendly-cta" style="display:flex;justify-content:center;">
-                <button class="btn btn--primary btn--lg" onclick="if(typeof Calendly!=='undefined'){Calendly.initPopupWidget({url:'https://calendly.com/zygimantaspode'});}else{window.open('https://calendly.com/zygimantaspode','_blank');}return false;">
-                    Rezervuoti nemokamą skambutį
-                </button>
-            </div>
         </div>
     </section>
 

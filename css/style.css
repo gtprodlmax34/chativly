@@ -143,6 +143,7 @@ input, select, button { font-family: var(--font); }
   font-weight: 800;
   box-shadow: 0 0 0 1px rgba(255,255,255,0.14), 0 4px 18px rgba(79,142,247,0.4);
   transition: var(--ease);
+  object-fit: cover;
 }
 .nav__logo:hover .nav__logo-badge {
   transform: scale(1.08) rotate(-8deg);
