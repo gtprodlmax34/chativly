@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=12">
+    <link rel="stylesheet" href="css/style.css?v=17">
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
@@ -28,6 +28,7 @@
             <ul class="nav__links" id="navLinks">
                 <li><a href="#how-it-works">Kaip tai veikia</a></li>
                 <li><a href="#services">Paslaugos</a></li>
+                <li><a href="#pricing">Kaina</a></li>
                 <li><a href="chatbot.html">DI Chatbotas</a></li>
                 <li class="nav__cta"><a href="#contact" class="btn btn--primary btn--sm">Rezervuoti skambutį</a></li>
             </ul>
@@ -51,17 +52,51 @@
                 </div>
                 <p class="hero__note">Padarysim demo versija svetainės tapačia savaite.</p>
             </div>
-            <div class="hero__visual">
+            <div class="hero__visual" aria-hidden="true">
                 <div class="hero__mock-glow"></div>
                 <div class="hero__mock">
-                    <div class="hero__mock-bar"><span></span><span></span><span></span></div>
-                    <div class="hero__mock-body">
-                        <div class="hero__chat-bubble hero__chat-bubble--user">Ar priimate rezervacijas savaitgaliais?</div>
-                        <div class="hero__chat-bubble hero__chat-bubble--bot">Taip! Priimame rezervacijas 24/7</div>
-                        <div class="hero__chat-bubble hero__chat-bubble--user">Super, noriu rezervuoti stalą penktadienį</div>
+                    <div class="hero__mock-bar">
+                        <span></span><span></span><span></span>
+                        <div class="hero__mock-url">jusu-verslas.lt</div>
+                    </div>
+                    <div class="site-mock">
+                        <div class="site-mock__nav">
+                            <div class="site-mock__logo"><i></i>Jūsų verslas</div>
+                            <div class="site-mock__links"><span>Paslaugos</span><span>Apie</span><span>Kontaktai</span></div>
+                            <div class="site-mock__btn site-mock__btn--sm">Susisiekti</div>
+                        </div>
+                        <div class="site-mock__hero">
+                            <div class="site-mock__hero-text">
+                                <div class="site-mock__tag">Vilnius · Kaunas · Klaipėda</div>
+                                <div class="site-mock__title">Profesionalios paslaugos jūsų mieste</div>
+                                <div class="site-mock__line"></div>
+                                <div class="site-mock__line site-mock__line--short"></div>
+                                <div class="site-mock__btn">Registruotis</div>
+                            </div>
+                            <div class="site-mock__img"></div>
+                        </div>
+                        <div class="site-mock__cards">
+                            <div class="site-mock__card"><div class="site-mock__card-img"></div><div class="site-mock__line"></div><div class="site-mock__line site-mock__line--short"></div></div>
+                            <div class="site-mock__card"><div class="site-mock__card-img site-mock__card-img--2"></div><div class="site-mock__line"></div><div class="site-mock__line site-mock__line--short"></div></div>
+                            <div class="site-mock__card"><div class="site-mock__card-img site-mock__card-img--3"></div><div class="site-mock__line"></div><div class="site-mock__line site-mock__line--short"></div></div>
+                        </div>
                     </div>
                 </div>
-                <div class="hero__floating-chip"><span class="hero__floating-dot"></span>Aktyvus dabar</div>
+                <div class="hero__phone">
+                    <div class="hero__phone-notch"></div>
+                    <div class="site-mock site-mock--phone">
+                        <div class="site-mock__nav">
+                            <div class="site-mock__logo"><i></i>Jūsų verslas</div>
+                            <div class="site-mock__burger"><span></span><span></span></div>
+                        </div>
+                        <div class="site-mock__img"></div>
+                        <div class="site-mock__title">Profesionalios paslaugos jūsų mieste</div>
+                        <div class="site-mock__line"></div>
+                        <div class="site-mock__line site-mock__line--short"></div>
+                        <div class="site-mock__btn">Registruotis</div>
+                    </div>
+                </div>
+                <div class="hero__floating-chip"><span class="hero__floating-dot"></span>Demo per tą pačią dieną</div>
             </div>
         </div>
     </section>
@@ -137,32 +172,37 @@
         </div>
     </section>
 
-    <!-- Chatbot Add-on Teaser -->
-    <section class="section" id="addon">
+    <!-- Pricing -->
+    <section class="section" id="pricing">
         <div class="container">
-            <div class="addon-teaser">
-                <div class="addon-teaser__icon">💬</div>
-                <div class="addon-teaser__body">
-                    <span class="section__tag">Papildoma paslauga</span>
-                    <h2 class="addon-teaser__title">Norite, kad svetainė pati atsakinėtų klientams?</h2>
-                    <p class="addon-teaser__desc">Prie bet kurios mūsų sukurtos svetainės galime pridėti Chativly DI chatbotą — jis priima rezervacijas ir atsako į klausimus visą parą, net kai jūs nedirbate.</p>
-                    <a href="chatbot.html" class="btn btn--primary btn--lg">Sužinoti apie DI chatbotą →</a>
-                </div>
+            <div class="section__header">
+                <span class="section__tag">Kaina</span>
+                <h2 class="section__title">Paprasta mėnesio kaina</h2>
+                <p class="section__subtitle">Jokio pradinio mokesčio. Mokate kas mėnesį ir galite atsisakyti bet kada.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Trial / CTA -->
-    <section class="section trial" id="trial">
-        <div class="container">
-            <div class="trial__inner">
-                <h2 class="trial__title">Aptarkime jūsų<br>naują svetainę</h2>
-                <p class="trial__subtitle">Nemokamas pokalbis apie jūsų verslą ir tai, kokia svetainė jam tiktų geriausiai. Jokių įsipareigojimų.</p>
-                <div class="trial__features">
-                    <span>✓ Pritaikyta jūsų verslui</span>
-                    <span>✓ Gyva per kelias savaites</span>
+            <div class="pricing">
+                <div class="price-card price-card--main">
+                    <h3 class="price-card__name">Svetainė + priežiūra</h3>
+                    <div class="price-card__price">50 €<span>/mėn.</span></div>
+                    <ul class="price-card__list">
+                        <li>✓ Dizainas ir sukūrimas</li>
+                        <li>✓ Talpinimas ir domenas</li>
+                        <li>✓ Kontaktų ir rezervacijų formos</li>
+                        <li>✓ Priežiūra ir atnaujinimai</li>
+                    </ul>
+                    <a href="#contact" class="btn btn--primary btn--lg">Rezervuoti nemokamą skambutį</a>
                 </div>
-                <a href="#contact" class="btn btn--white btn--lg">Rezervuoti nemokamą skambutį</a>
+                <div class="price-card">
+                    <span class="section__tag">Papildoma paslauga</span>
+                    <h3 class="price-card__name">DI chatbotas</h3>
+                    <div class="price-card__price">+40 €<span>/mėn.</span></div>
+                    <ul class="price-card__list">
+                        <li>✓ Atsako klientams 24/7</li>
+                        <li>✓ Priima rezervacijas</li>
+                        <li>✓ 4 dienos nemokamai</li>
+                    </ul>
+                    <a href="chatbot.html" class="btn btn--outline btn--lg">Sužinoti daugiau →</a>
+                </div>
             </div>
         </div>
     </section>
@@ -173,7 +213,12 @@
             <div class="section__header">
                 <span class="section__tag">Bendraukite su mumis :)</span>
                 <h2 class="section__title">Rezervuokite nemokamą skambutį</h2>
-                <p class="section__subtitle">Pasirinkite jums patogų laiką — pasikalbėsime apie jūsų verslą ir naują svetainę.</p>
+                <p class="section__subtitle">Pasirinkite jums patogų laiką — pasikalbėsime apie jūsų verslą ir naują svetainę. Jokių įsipareigojimų.</p>
+            </div>
+            <div class="contact__features">
+                <span>✓ Pritaikyta jūsų verslui</span>
+                <span>✓ Gyva per kelias savaites</span>
+                <span>✓ 50 €/mėn., jokio pradinio mokesčio</span>
             </div>
             <div class="calendly-cta" style="display:flex;justify-content:center;">
                 <button class="btn btn--primary btn--lg" onclick="if(typeof Calendly!=='undefined'){Calendly.initPopupWidget({url:'https://calendly.com/zygimantaspode'});}else{window.open('https://calendly.com/zygimantaspode','_blank');}return false;">
@@ -191,6 +236,6 @@
         </div>
     </footer>
 
-    <script src="js/main.js?v=8"></script>
+    <script src="js/main.js?v=9"></script>
 </body>
 </html>
